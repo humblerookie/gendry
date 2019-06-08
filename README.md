@@ -1,2 +1,2 @@
 # gendry
-A bitrise client written in Flutter
+A mobile client for bitrise written in Flutter.
