@@ -1,4 +1,4 @@
-# gendry
+# Gendry
 A mobile client for bitrise written in Flutter.
 
 ## Getting Started
