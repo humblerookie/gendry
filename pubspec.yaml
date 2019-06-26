@@ -1,0 +1,77 @@
+name: bitrise_client
+description: A bitrise client
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# Read more about versioning at semver.org.
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  json_annotation: ^2.0.0
+  rxdart: ^0.22.0
+  dio: ^2.1.3
+  inject:
+    path: ./inject.dart/package/inject
+  webview_flutter: ^0.3.7+1
+  shared_preferences: ^0.5.2+1
+  flutter_bloc: ^0.14.0
+  built_value: ^6.6.0
+  built_collection: ^4.2.2
+  cached_network_image: ^0.8.0
+
+# builders is new directive following the fact that
+# dev_dependencies were only meant for test package
+# but got overloaded due to bad design.
+# More here https://github.com/flutter/flutter/issues/27141
+# use "flutter generate" to generate annotation classes
+
+
+builders:
+  build_daemon: 0.6.1
+  json_serializable: ^2.0.0
+  built_value_generator: ^6.6.0
+  inject_generator:
+    path: ./inject.dart/package/inject_generator
+
+dev_dependencies:
+  test: 1.6.1
+  flutter_test:
+    sdk: flutter
+  mockito: ^4.0.0
+
+
+# For information on the generic Dart part of this file, see the
+# following page: https://www.dartlang.org/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+
+  uses-material-design: true
+
+  fonts:
+    - family: Omnes
+      fonts:
+        - asset: assets/fonts/omnes-regular.otf
+        - asset: assets/fonts/omnes-medium.otf
+          weight: 700
+        - asset: assets/fonts/omnes-bold.otf
+          weight: 900
+
+  assets:
+    - assets/images/
+    - assets/launcher/
+
+flutter_icons:
+  ios: true
+  android: true
+  image_path_ios: "assets/launcher/launcher_ios.png"
+
+
