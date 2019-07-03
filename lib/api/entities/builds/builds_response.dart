@@ -3,7 +3,7 @@ library builds_response;
 import 'dart:convert';
 
 import 'package:bitrise_client/api/entities/paging.dart';
-import 'package:bitrise_client/data_model/serializers.dart';
+import 'package:bitrise_client/parse/serializers.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -20,6 +20,7 @@ abstract class BuildsResponse
 
   @BuiltValueField(wireName: 'data')
   BuiltList<AppBuild> get appBuild;
+
   @BuiltValueField(wireName: 'paging')
   Paging get paging;
   String toJson() {

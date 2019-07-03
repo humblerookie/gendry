@@ -1,10 +1,12 @@
-enum LoadState{
-  EMPTY,LOADING,DATA,ERROR
-}
+enum LoadState { EMPTY, LOADING, DATA, ERROR }
 
-abstract class  NavEvent{}
-class NavNone extends NavEvent{}
-class NextScreen extends NavEvent{
+abstract class NavEvent {}
+
+class NavNone extends NavEvent {}
+
+class NextScreen extends NavEvent {
   final String target;
-  NextScreen(this.target);
+  Object data;
+
+  NextScreen(this.target, {this.data});
 }

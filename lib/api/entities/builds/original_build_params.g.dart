@@ -22,45 +22,79 @@ class _$OriginalBuildParamsSerializer
   @override
   Iterable serialize(Serializers serializers, OriginalBuildParams object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
-      'commit_hash',
-      serializers.serialize(object.commitHash,
-          specifiedType: const FullType(String)),
-      'commit_message',
-      serializers.serialize(object.commitMessage,
-          specifiedType: const FullType(String)),
-      'branch',
-      serializers.serialize(object.branch,
-          specifiedType: const FullType(String)),
-      'branch_repo_owner',
-      serializers.serialize(object.branchRepoOwner,
-          specifiedType: const FullType(String)),
-      'branch_dest',
-      serializers.serialize(object.branchDest,
-          specifiedType: const FullType(String)),
-      'branch_dest_repo_owner',
-      serializers.serialize(object.branchDestRepoOwner,
-          specifiedType: const FullType(String)),
-      'pull_request_id',
-      serializers.serialize(object.pullRequestId,
-          specifiedType: const FullType(int)),
-      'pull_request_repository_url',
-      serializers.serialize(object.pullRequestRepositoryUrl,
-          specifiedType: const FullType(String)),
-      'pull_request_merge_branch',
-      serializers.serialize(object.pullRequestMergeBranch,
-          specifiedType: const FullType(String)),
-      'pull_request_head_branch',
-      serializers.serialize(object.pullRequestHeadBranch,
-          specifiedType: const FullType(String)),
-      'pull_request_author',
-      serializers.serialize(object.pullRequestAuthor,
-          specifiedType: const FullType(String)),
-      'diff_url',
-      serializers.serialize(object.diffUrl,
-          specifiedType: const FullType(String)),
-    ];
-
+    final result = <Object>[];
+    if (object.commitHash != null) {
+      result
+        ..add('commit_hash')
+        ..add(serializers.serialize(object.commitHash,
+            specifiedType: const FullType(String)));
+    }
+    if (object.commitMessage != null) {
+      result
+        ..add('commit_message')
+        ..add(serializers.serialize(object.commitMessage,
+            specifiedType: const FullType(String)));
+    }
+    if (object.branch != null) {
+      result
+        ..add('branch')
+        ..add(serializers.serialize(object.branch,
+            specifiedType: const FullType(String)));
+    }
+    if (object.branchRepoOwner != null) {
+      result
+        ..add('branch_repo_owner')
+        ..add(serializers.serialize(object.branchRepoOwner,
+            specifiedType: const FullType(String)));
+    }
+    if (object.branchDest != null) {
+      result
+        ..add('branch_dest')
+        ..add(serializers.serialize(object.branchDest,
+            specifiedType: const FullType(String)));
+    }
+    if (object.branchDestRepoOwner != null) {
+      result
+        ..add('branch_dest_repo_owner')
+        ..add(serializers.serialize(object.branchDestRepoOwner,
+            specifiedType: const FullType(String)));
+    }
+    if (object.pullRequestId != null) {
+      result
+        ..add('pull_request_id')
+        ..add(serializers.serialize(object.pullRequestId,
+            specifiedType: const FullType(int)));
+    }
+    if (object.pullRequestRepositoryUrl != null) {
+      result
+        ..add('pull_request_repository_url')
+        ..add(serializers.serialize(object.pullRequestRepositoryUrl,
+            specifiedType: const FullType(String)));
+    }
+    if (object.pullRequestMergeBranch != null) {
+      result
+        ..add('pull_request_merge_branch')
+        ..add(serializers.serialize(object.pullRequestMergeBranch,
+            specifiedType: const FullType(String)));
+    }
+    if (object.pullRequestHeadBranch != null) {
+      result
+        ..add('pull_request_head_branch')
+        ..add(serializers.serialize(object.pullRequestHeadBranch,
+            specifiedType: const FullType(String)));
+    }
+    if (object.pullRequestAuthor != null) {
+      result
+        ..add('pull_request_author')
+        ..add(serializers.serialize(object.pullRequestAuthor,
+            specifiedType: const FullType(String)));
+    }
+    if (object.diffUrl != null) {
+      result
+        ..add('diff_url')
+        ..add(serializers.serialize(object.diffUrl,
+            specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -173,52 +207,7 @@ class _$OriginalBuildParams extends OriginalBuildParams {
       this.pullRequestHeadBranch,
       this.pullRequestAuthor,
       this.diffUrl})
-      : super._() {
-    if (commitHash == null) {
-      throw new BuiltValueNullFieldError('OriginalBuildParams', 'commitHash');
-    }
-    if (commitMessage == null) {
-      throw new BuiltValueNullFieldError(
-          'OriginalBuildParams', 'commitMessage');
-    }
-    if (branch == null) {
-      throw new BuiltValueNullFieldError('OriginalBuildParams', 'branch');
-    }
-    if (branchRepoOwner == null) {
-      throw new BuiltValueNullFieldError(
-          'OriginalBuildParams', 'branchRepoOwner');
-    }
-    if (branchDest == null) {
-      throw new BuiltValueNullFieldError('OriginalBuildParams', 'branchDest');
-    }
-    if (branchDestRepoOwner == null) {
-      throw new BuiltValueNullFieldError(
-          'OriginalBuildParams', 'branchDestRepoOwner');
-    }
-    if (pullRequestId == null) {
-      throw new BuiltValueNullFieldError(
-          'OriginalBuildParams', 'pullRequestId');
-    }
-    if (pullRequestRepositoryUrl == null) {
-      throw new BuiltValueNullFieldError(
-          'OriginalBuildParams', 'pullRequestRepositoryUrl');
-    }
-    if (pullRequestMergeBranch == null) {
-      throw new BuiltValueNullFieldError(
-          'OriginalBuildParams', 'pullRequestMergeBranch');
-    }
-    if (pullRequestHeadBranch == null) {
-      throw new BuiltValueNullFieldError(
-          'OriginalBuildParams', 'pullRequestHeadBranch');
-    }
-    if (pullRequestAuthor == null) {
-      throw new BuiltValueNullFieldError(
-          'OriginalBuildParams', 'pullRequestAuthor');
-    }
-    if (diffUrl == null) {
-      throw new BuiltValueNullFieldError('OriginalBuildParams', 'diffUrl');
-    }
-  }
+      : super._();
 
   @override
   OriginalBuildParams rebuild(

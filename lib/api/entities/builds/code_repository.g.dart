@@ -51,11 +51,13 @@ class _$CodeRepositorySerializer
       'owner',
       serializers.serialize(object.owner,
           specifiedType: const FullType(CodeOwner)),
-      'avatar_url',
-      serializers.serialize(object.avatarUrl,
-          specifiedType: const FullType(String)),
     ];
-
+    if (object.avatarUrl != null) {
+      result
+        ..add('avatar_url')
+        ..add(serializers.serialize(object.avatarUrl,
+            specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -200,9 +202,6 @@ class _$CodeRepository extends CodeRepository {
     }
     if (owner == null) {
       throw new BuiltValueNullFieldError('CodeRepository', 'owner');
-    }
-    if (avatarUrl == null) {
-      throw new BuiltValueNullFieldError('CodeRepository', 'avatarUrl');
     }
   }
 

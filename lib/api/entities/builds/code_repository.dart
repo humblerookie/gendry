@@ -2,7 +2,7 @@ library code_repository;
 
 import 'dart:convert';
 
-import 'package:bitrise_client/data_model/serializers.dart';
+import 'package:bitrise_client/parse/serializers.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -49,6 +49,7 @@ abstract class CodeRepository
   @BuiltValueField(wireName: 'owner')
   CodeOwner get owner;
 
+  @nullable
   @BuiltValueField(wireName: 'avatar_url')
   String get avatarUrl;
 
@@ -64,5 +65,4 @@ abstract class CodeRepository
 
   static Serializer<CodeRepository> get serializer =>
       _$codeRepositorySerializer;
-
 }

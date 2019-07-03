@@ -2,7 +2,7 @@ library code_owner;
 
 import 'dart:convert';
 
-import 'package:bitrise_client/data_model/serializers.dart';
+import 'package:bitrise_client/parse/serializers.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 

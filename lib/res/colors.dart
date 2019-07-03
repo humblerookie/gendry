@@ -28,6 +28,9 @@ class AppColors {
   static const Color accentColor = Color(0xFFAB75AC);
   static const Color accentColorSplash = Color(0xFDAB75AC);
 
+  static const Color lightBlue = Color(0xFF4A90E2);
+  static const Color darkGreen = Color(0xFF417505);
+
   static Color getPrimaryColor() {
     return Color(primaryColor);
   }

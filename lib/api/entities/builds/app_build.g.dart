@@ -17,78 +17,151 @@ class _$AppBuildSerializer implements StructuredSerializer<AppBuild> {
   @override
   Iterable serialize(Serializers serializers, AppBuild object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
-      'triggered_at',
-      serializers.serialize(object.triggeredAt,
-          specifiedType: const FullType(String)),
-      'started_on_worker_at',
-      serializers.serialize(object.startedOnWorkerAt,
-          specifiedType: const FullType(String)),
-      'environment_prepare_finished_at',
-      serializers.serialize(object.environmentPrepareFinishedAt,
-          specifiedType: const FullType(String)),
-      'finished_at',
-      serializers.serialize(object.finishedAt,
-          specifiedType: const FullType(String)),
-      'slug',
-      serializers.serialize(object.slug, specifiedType: const FullType(String)),
-      'status',
-      serializers.serialize(object.status, specifiedType: const FullType(int)),
-      'status_text',
-      serializers.serialize(object.statusText,
-          specifiedType: const FullType(String)),
-      'abort_reason',
-      serializers.serialize(object.abortReason,
-          specifiedType: const FullType(String)),
-      'is_on_hold',
-      serializers.serialize(object.isOnHold,
-          specifiedType: const FullType(bool)),
-      'branch',
-      serializers.serialize(object.branch,
-          specifiedType: const FullType(String)),
-      'build_number',
-      serializers.serialize(object.buildNumber,
-          specifiedType: const FullType(int)),
-      'commit_hash',
-      serializers.serialize(object.commitHash,
-          specifiedType: const FullType(String)),
-      'commit_message',
-      serializers.serialize(object.commitMessage,
-          specifiedType: const FullType(String)),
-      'tag',
-      serializers.serialize(object.tag, specifiedType: const FullType(String)),
-      'triggered_workflow',
-      serializers.serialize(object.triggeredWorkflow,
-          specifiedType: const FullType(String)),
-      'triggered_by',
-      serializers.serialize(object.triggeredBy,
-          specifiedType: const FullType(String)),
-      'stack_config_type',
-      serializers.serialize(object.stackConfigType,
-          specifiedType: const FullType(String)),
-      'stack_identifier',
-      serializers.serialize(object.stackIdentifier,
-          specifiedType: const FullType(String)),
-      'original_build_params',
-      serializers.serialize(object.originalBuildParams,
-          specifiedType: const FullType(OriginalBuildParams)),
-      'pull_request_id',
-      serializers.serialize(object.pullRequestId,
-          specifiedType: const FullType(int)),
-      'pull_request_target_branch',
-      serializers.serialize(object.pullRequestTargetBranch,
-          specifiedType: const FullType(String)),
-      'pull_request_view_url',
-      serializers.serialize(object.pullRequestViewUrl,
-          specifiedType: const FullType(String)),
-      'commit_view_url',
-      serializers.serialize(object.commitViewUrl,
-          specifiedType: const FullType(String)),
-      'repository',
-      serializers.serialize(object.repository,
-          specifiedType: const FullType(CodeRepository)),
-    ];
-
+    final result = <Object>[];
+    if (object.triggeredAt != null) {
+      result
+        ..add('triggered_at')
+        ..add(serializers.serialize(object.triggeredAt,
+            specifiedType: const FullType(String)));
+    }
+    if (object.startedOnWorkerAt != null) {
+      result
+        ..add('started_on_worker_at')
+        ..add(serializers.serialize(object.startedOnWorkerAt,
+            specifiedType: const FullType(String)));
+    }
+    if (object.environmentPrepareFinishedAt != null) {
+      result
+        ..add('environment_prepare_finished_at')
+        ..add(serializers.serialize(object.environmentPrepareFinishedAt,
+            specifiedType: const FullType(String)));
+    }
+    if (object.finishedAt != null) {
+      result
+        ..add('finished_at')
+        ..add(serializers.serialize(object.finishedAt,
+            specifiedType: const FullType(String)));
+    }
+    if (object.slug != null) {
+      result
+        ..add('slug')
+        ..add(serializers.serialize(object.slug,
+            specifiedType: const FullType(String)));
+    }
+    if (object.status != null) {
+      result
+        ..add('status')
+        ..add(serializers.serialize(object.status,
+            specifiedType: const FullType(int)));
+    }
+    if (object.statusText != null) {
+      result
+        ..add('status_text')
+        ..add(serializers.serialize(object.statusText,
+            specifiedType: const FullType(String)));
+    }
+    if (object.abortReason != null) {
+      result
+        ..add('abort_reason')
+        ..add(serializers.serialize(object.abortReason,
+            specifiedType: const FullType(String)));
+    }
+    if (object.isOnHold != null) {
+      result
+        ..add('is_on_hold')
+        ..add(serializers.serialize(object.isOnHold,
+            specifiedType: const FullType(bool)));
+    }
+    if (object.branch != null) {
+      result
+        ..add('branch')
+        ..add(serializers.serialize(object.branch,
+            specifiedType: const FullType(String)));
+    }
+    if (object.buildNumber != null) {
+      result
+        ..add('build_number')
+        ..add(serializers.serialize(object.buildNumber,
+            specifiedType: const FullType(int)));
+    }
+    if (object.commitHash != null) {
+      result
+        ..add('commit_hash')
+        ..add(serializers.serialize(object.commitHash,
+            specifiedType: const FullType(String)));
+    }
+    if (object.commitMessage != null) {
+      result
+        ..add('commit_message')
+        ..add(serializers.serialize(object.commitMessage,
+            specifiedType: const FullType(String)));
+    }
+    if (object.tag != null) {
+      result
+        ..add('tag')
+        ..add(serializers.serialize(object.tag,
+            specifiedType: const FullType(String)));
+    }
+    if (object.triggeredWorkflow != null) {
+      result
+        ..add('triggered_workflow')
+        ..add(serializers.serialize(object.triggeredWorkflow,
+            specifiedType: const FullType(String)));
+    }
+    if (object.triggeredBy != null) {
+      result
+        ..add('triggered_by')
+        ..add(serializers.serialize(object.triggeredBy,
+            specifiedType: const FullType(String)));
+    }
+    if (object.stackConfigType != null) {
+      result
+        ..add('stack_config_type')
+        ..add(serializers.serialize(object.stackConfigType,
+            specifiedType: const FullType(String)));
+    }
+    if (object.stackIdentifier != null) {
+      result
+        ..add('stack_identifier')
+        ..add(serializers.serialize(object.stackIdentifier,
+            specifiedType: const FullType(String)));
+    }
+    if (object.originalBuildParams != null) {
+      result
+        ..add('original_build_params')
+        ..add(serializers.serialize(object.originalBuildParams,
+            specifiedType: const FullType(OriginalBuildParams)));
+    }
+    if (object.pullRequestId != null) {
+      result
+        ..add('pull_request_id')
+        ..add(serializers.serialize(object.pullRequestId,
+            specifiedType: const FullType(int)));
+    }
+    if (object.pullRequestTargetBranch != null) {
+      result
+        ..add('pull_request_target_branch')
+        ..add(serializers.serialize(object.pullRequestTargetBranch,
+            specifiedType: const FullType(String)));
+    }
+    if (object.pullRequestViewUrl != null) {
+      result
+        ..add('pull_request_view_url')
+        ..add(serializers.serialize(object.pullRequestViewUrl,
+            specifiedType: const FullType(String)));
+    }
+    if (object.commitViewUrl != null) {
+      result
+        ..add('commit_view_url')
+        ..add(serializers.serialize(object.commitViewUrl,
+            specifiedType: const FullType(String)));
+    }
+    if (object.repository != null) {
+      result
+        ..add('repository')
+        ..add(serializers.serialize(object.repository,
+            specifiedType: const FullType(CodeRepository)));
+    }
     return result;
   }
 
@@ -285,81 +358,7 @@ class _$AppBuild extends AppBuild {
       this.pullRequestViewUrl,
       this.commitViewUrl,
       this.repository})
-      : super._() {
-    if (triggeredAt == null) {
-      throw new BuiltValueNullFieldError('AppBuild', 'triggeredAt');
-    }
-    if (startedOnWorkerAt == null) {
-      throw new BuiltValueNullFieldError('AppBuild', 'startedOnWorkerAt');
-    }
-    if (environmentPrepareFinishedAt == null) {
-      throw new BuiltValueNullFieldError(
-          'AppBuild', 'environmentPrepareFinishedAt');
-    }
-    if (finishedAt == null) {
-      throw new BuiltValueNullFieldError('AppBuild', 'finishedAt');
-    }
-    if (slug == null) {
-      throw new BuiltValueNullFieldError('AppBuild', 'slug');
-    }
-    if (status == null) {
-      throw new BuiltValueNullFieldError('AppBuild', 'status');
-    }
-    if (statusText == null) {
-      throw new BuiltValueNullFieldError('AppBuild', 'statusText');
-    }
-    if (abortReason == null) {
-      throw new BuiltValueNullFieldError('AppBuild', 'abortReason');
-    }
-    if (isOnHold == null) {
-      throw new BuiltValueNullFieldError('AppBuild', 'isOnHold');
-    }
-    if (branch == null) {
-      throw new BuiltValueNullFieldError('AppBuild', 'branch');
-    }
-    if (buildNumber == null) {
-      throw new BuiltValueNullFieldError('AppBuild', 'buildNumber');
-    }
-    if (commitHash == null) {
-      throw new BuiltValueNullFieldError('AppBuild', 'commitHash');
-    }
-    if (commitMessage == null) {
-      throw new BuiltValueNullFieldError('AppBuild', 'commitMessage');
-    }
-    if (tag == null) {
-      throw new BuiltValueNullFieldError('AppBuild', 'tag');
-    }
-    if (triggeredWorkflow == null) {
-      throw new BuiltValueNullFieldError('AppBuild', 'triggeredWorkflow');
-    }
-    if (triggeredBy == null) {
-      throw new BuiltValueNullFieldError('AppBuild', 'triggeredBy');
-    }
-    if (stackConfigType == null) {
-      throw new BuiltValueNullFieldError('AppBuild', 'stackConfigType');
-    }
-    if (stackIdentifier == null) {
-      throw new BuiltValueNullFieldError('AppBuild', 'stackIdentifier');
-    }
-    if (originalBuildParams == null) {
-      throw new BuiltValueNullFieldError('AppBuild', 'originalBuildParams');
-    }
-    if (pullRequestId == null) {
-      throw new BuiltValueNullFieldError('AppBuild', 'pullRequestId');
-    }
-    if (pullRequestTargetBranch == null) {
-      throw new BuiltValueNullFieldError('AppBuild', 'pullRequestTargetBranch');
-    }
-    if (pullRequestViewUrl == null) {
-      throw new BuiltValueNullFieldError('AppBuild', 'pullRequestViewUrl');
-    }
-    if (commitViewUrl == null) {
-      throw new BuiltValueNullFieldError('AppBuild', 'commitViewUrl');
-    }
-    if (repository == null) {
-      throw new BuiltValueNullFieldError('AppBuild', 'repository');
-    }
-  }
+      : super._();
 
   @override
   AppBuild rebuild(void Function(AppBuildBuilder) updates) =>
@@ -654,20 +653,20 @@ class AppBuildBuilder implements Builder<AppBuild, AppBuildBuilder> {
               triggeredBy: triggeredBy,
               stackConfigType: stackConfigType,
               stackIdentifier: stackIdentifier,
-              originalBuildParams: originalBuildParams.build(),
+              originalBuildParams: _originalBuildParams?.build(),
               pullRequestId: pullRequestId,
               pullRequestTargetBranch: pullRequestTargetBranch,
               pullRequestViewUrl: pullRequestViewUrl,
               commitViewUrl: commitViewUrl,
-              repository: repository.build());
+              repository: _repository?.build());
     } catch (_) {
       String _$failedField;
       try {
         _$failedField = 'originalBuildParams';
-        originalBuildParams.build();
+        _originalBuildParams?.build();
 
         _$failedField = 'repository';
-        repository.build();
+        _repository?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             'AppBuild', _$failedField, e.toString());

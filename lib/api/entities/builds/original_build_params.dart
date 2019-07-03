@@ -2,8 +2,7 @@ library original_build_params;
 
 import 'dart:convert';
 
-import 'package:bitrise_client/data_model/serializers.dart';
-import 'package:built_collection/built_collection.dart';
+import 'package:bitrise_client/parse/serializers.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -14,30 +13,53 @@ abstract class OriginalBuildParams
   OriginalBuildParams._();
 
   factory OriginalBuildParams([updates(OriginalBuildParamsBuilder b)]) =
-  _$OriginalBuildParams;
+      _$OriginalBuildParams;
 
   @BuiltValueField(wireName: 'commit_hash')
+  @nullable
   String get commitHash;
+
   @BuiltValueField(wireName: 'commit_message')
+  @nullable
   String get commitMessage;
+
+  @nullable
   @BuiltValueField(wireName: 'branch')
   String get branch;
+
+  @nullable
   @BuiltValueField(wireName: 'branch_repo_owner')
   String get branchRepoOwner;
+
+  @nullable
   @BuiltValueField(wireName: 'branch_dest')
   String get branchDest;
+
+  @nullable
   @BuiltValueField(wireName: 'branch_dest_repo_owner')
   String get branchDestRepoOwner;
+
+  @nullable
   @BuiltValueField(wireName: 'pull_request_id')
   int get pullRequestId;
+
+  @nullable
   @BuiltValueField(wireName: 'pull_request_repository_url')
   String get pullRequestRepositoryUrl;
+
+  @nullable
   @BuiltValueField(wireName: 'pull_request_merge_branch')
   String get pullRequestMergeBranch;
+
+  @nullable
   @BuiltValueField(wireName: 'pull_request_head_branch')
   String get pullRequestHeadBranch;
+
+  @nullable
   @BuiltValueField(wireName: 'pull_request_author')
   String get pullRequestAuthor;
+
+  @nullable
   @BuiltValueField(wireName: 'diff_url')
   String get diffUrl;
 

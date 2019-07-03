@@ -1,5 +1,4 @@
-import 'dart:convert';
-
+import 'package:bitrise_client/api/json_decoder.dart';
 import 'package:dio/dio.dart';
 import 'package:inject/inject.dart';
 
@@ -14,12 +13,10 @@ class UserApi {
   UserApi(this._dio);
 
   Future<res.Response<User>> getUser() async {
-    String apiData = "";
     try {
-      var response = await _dio.get("/me");
-      apiData = json.encode(response.data);
-      var data = UserResponse.fromJson(apiData);
-      return res.Response<User>(data.user, null);
+      Response<String> response = await _dio.get("/me");
+      var userResponse = await decodeJson<UserResponse>(response.data);
+      return res.Response<User>(userResponse.user, null);
     } catch (error, stacktrace) {
       print(stacktrace);
       return res.Response<User>(null, error);

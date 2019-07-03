@@ -6,7 +6,7 @@ import 'package:bitrise_client/res/colors.dart';
 import 'package:bitrise_client/res/dimensions.dart';
 import 'package:bitrise_client/res/images.dart';
 import 'package:bitrise_client/res/strings.dart';
-import 'package:bitrise_client/ui/onboarding/profile.dart';
+import 'package:bitrise_client/ui/onboarding/onboarding_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -34,18 +34,6 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   @override
-  void onNavEvent(NavEvent event) {
-    switch(event.runtimeType){
-      case NextScreen:
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (context) => OnboardingProfileScreen()),
-        );
-        break;
-    }
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
@@ -70,6 +58,11 @@ class _LoginScreenState extends State<LoginScreen> {
           break;
       }
     });
+  }
+  @override
+  void dispose() {
+    _bloc.dispose();
+    super.dispose();
   }
 }
 

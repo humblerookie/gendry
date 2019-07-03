@@ -7,7 +7,7 @@ import 'package:bitrise_client/res/dimensions.dart';
 import 'package:bitrise_client/res/images.dart';
 import 'package:bitrise_client/res/strings.dart';
 import 'package:bitrise_client/ui/login/login.dart';
-import 'package:bitrise_client/ui/onboarding/profile.dart';
+import 'package:bitrise_client/ui/onboarding/onboarding_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
